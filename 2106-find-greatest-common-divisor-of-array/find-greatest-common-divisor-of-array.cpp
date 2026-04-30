@@ -10,12 +10,22 @@ public:
             if (mn > nums[i])
                 mn = nums[i];
         }
-        int gcd = 1;
-        for (int i = 1; i <= mn; i++) {
-            if (mn % i== 0 && mx % i == 0)
-                gcd = i;
-        }
+        //int gcd = 1;
+        // (int i = 1; i <= mn; i++) {
+            //if (mn % i== 0 && mx % i == 0)
+             //   gcd = i;
+    //    }
     
-    return gcd;
+    //return gcd;
+    int rem = mx % mn;
+    while(rem !=0)
+    {
+        mx = mx/mn;
+        mx =mn ;
+        mn = rem;
+        rem = mx%mn;
     }
+    return mn ;
+    }
+
 };
